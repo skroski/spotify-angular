@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+button.btn.btn-success.selected {
+    background:transparent!important;
+    background-color: transparent!important;
+    color:white;
+}
