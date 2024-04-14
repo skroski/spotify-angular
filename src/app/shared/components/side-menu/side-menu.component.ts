@@ -2,6 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { ButtonMenuComponent } from "../button-menu/button-menu.component";
 import { IPlaylist } from '../../../interfaces/IPlaylist';
 import { SpotifyService } from '../../../services/spotify.service';
+import { UserFooterComponent } from "../user-footer/user-footer.component";
 
 @Component({
     selector: 'app-side-menu',
@@ -58,20 +59,22 @@ import { SpotifyService } from '../../../services/spotify.service';
     <div class="collapse collapse-arrow bg-base-200">
       <input type="radio" name="my-accordion-2" />
       <div class="collapse-title text-xl font-medium">
-        Click to open this one and close others
+        <app-user-footer></app-user-footer>
       </div>
       <div class="collapse-content">
         <p>hello</p>
+        
       </div>
     </div>
   `,
     styleUrl: './side-menu.component.scss',
-    imports: [ButtonMenuComponent]
+    imports: [ButtonMenuComponent, UserFooterComponent]
 })
 export class SideMenuComponent implements OnInit {
   menuSelecionado = 'Home';
   playlists: IPlaylist[] = [];
   spotifyService = inject(SpotifyService)
+
   buttonClick(button: string){
     this.menuSelecionado = button;
   }

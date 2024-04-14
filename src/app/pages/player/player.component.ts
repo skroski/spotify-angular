@@ -6,7 +6,9 @@ import { SideMenuComponent } from '../../shared/components/side-menu/side-menu.c
     standalone: true,
     template: `
     <div class="flex">
+      <div class="w-96">
       <app-side-menu></app-side-menu>
+      </div>
       <div>
         <div class="flex-none w-14">
         01
