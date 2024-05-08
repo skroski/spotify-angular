@@ -15,8 +15,6 @@ export const AuthenticatedGuard: CanMatchFn = (route: Route, segments: UrlSegmen
       res(true)
     else
       res(naoAutenticado());
-    
-
   })
 function naoAutenticado() {
   localStorage.clear();

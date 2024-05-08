@@ -44,9 +44,10 @@ import { UserFooterComponent } from "../user-footer/user-footer.component";
         PLAYLIST
       </div>
       <div class="collapse-content">
+
       @for (playlist of playlists; track playlist.id) {
       <app-button-menu 
-      
+        class="flex flex-col"
         [descricao]='playlist.name'
         [selected]="menuSelecionado === playlist.id"
         (click)="buttonClick(playlist.id)">

@@ -1,10 +1,9 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faArrowRightToBracket, faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { IUsuario } from '../../../interfaces/IUsuario';
 import { SpotifyService } from '../../../services/spotify.service';
-faArrowRightToBracket
-FontAwesomeModule;
+
 @Component({
   selector: 'app-user-footer',
   standalone: true,
