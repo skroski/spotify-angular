@@ -1,3 +1,4 @@
+import { IArtista } from "../interfaces/IArtista";
 import { IPlaylist } from "../interfaces/IPlaylist";
 import { IUsuario } from "../interfaces/IUsuario";
 
@@ -16,3 +17,12 @@ export function SpotifyPlaylistParaPlaylist(playlist: SpotifyApi.PlaylistObjectS
         imageUrl: playlist.images.pop().url
     }
 }
+
+export function SpotifyArtistaParaArtista(spotifyArtista: SpotifyApi.ArtistObjectFull): IArtista {
+    return {
+        id: spotifyArtista.id,
+        name: spotifyArtista.name,
+        imagemUrl: spotifyArtista.images.pop().url
+    }
+
+} 

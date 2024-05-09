@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { SideMenuComponent } from '../../shared/components/side-menu/side-menu.component';
+import { SideMenuComponent } from '../../components/side-menu/side-menu.component';
+import { RouterOutlet } from '@angular/router';
+
 
 @Component({
     selector: 'app-player',
@@ -9,15 +11,12 @@ import { SideMenuComponent } from '../../shared/components/side-menu/side-menu.c
       <div class="w-96">
       <app-side-menu></app-side-menu>
       </div>
-      <div>
-        <div class="flex-none w-14">
-        01
-        </div>
-        <div class="flex-1 w-64">02</div>
+        <div class="flex-1 w-64">
+          <router-outlet></router-outlet>
       </div>
     </div>
   `,
     styleUrl: './player.component.scss',
-    imports: [SideMenuComponent]
+    imports: [RouterOutlet,SideMenuComponent]
 })
 export class PlayerComponent {}

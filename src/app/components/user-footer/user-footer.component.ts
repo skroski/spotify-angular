@@ -1,8 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
-import { IUsuario } from '../../../interfaces/IUsuario';
-import { SpotifyService } from '../../../services/spotify.service';
+import { IUsuario } from '../../interfaces/IUsuario';
+import { SpotifyService } from '../../services/spotify.service';
 
 @Component({
   selector: 'app-user-footer',
@@ -12,11 +12,11 @@ import { SpotifyService } from '../../../services/spotify.service';
     <div class="flex justify-between">
       <div class="avatar">
         <div class="w-16 rounded-full">
-          <img [src]="usuario.imageUrl" alt="Teste" />
+          <img [src]="usuario.imageUrl" alt="Teste" (click)="logout()" />
         </div>
       </div>
-      <span>{{ usuario.name }}</span>
-      <fa-icon [icon]="faArrowRightToBracket"></fa-icon>
+      <h4 (click)="logout()">{{ usuario.name }}</h4>
+      <fa-icon [icon]="faArrowRightToBracket" (click)="logout()"></fa-icon>
     </div>
   `,
   styleUrl: './user-footer.component.scss',
@@ -27,5 +27,8 @@ export class UserFooterComponent implements OnInit {
   usuario: IUsuario = null;
   ngOnInit(): void {
     this.usuario = this.spotifyService.usuario;
+  }
+  logout(): void {
+    this.spotifyService.logout();
   }
 }

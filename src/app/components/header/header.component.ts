@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { SpotifyService } from '../../../services/spotify.service';
+import { SpotifyService } from '../../services/spotify.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -75,7 +75,7 @@ export class HeaderComponent implements OnInit {
     const token = this.spotifyService.obterTokenUrlCallback();
     if (!!token) {
       this.spotifyService.defineAccessToken(token);
-      this.router.navigate(['/player']);
+      this.router.navigate(['/player/home']);
     }
     // else{
     //   this.router.navigate(['/login'])

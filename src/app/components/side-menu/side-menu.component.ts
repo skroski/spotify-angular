@@ -1,8 +1,9 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ButtonMenuComponent } from "../button-menu/button-menu.component";
-import { IPlaylist } from '../../../interfaces/IPlaylist';
-import { SpotifyService } from '../../../services/spotify.service';
+import { IPlaylist } from '../../interfaces/IPlaylist';
+import { SpotifyService } from '../../services/spotify.service';
 import { UserFooterComponent } from "../user-footer/user-footer.component";
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-side-menu',
@@ -63,7 +64,7 @@ import { UserFooterComponent } from "../user-footer/user-footer.component";
         <app-user-footer></app-user-footer>
       </div>
       <div class="collapse-content">
-        <p>hello</p>
+        <a (click)="logout()">sair</a>
         
       </div>
     </div>
@@ -74,15 +75,20 @@ import { UserFooterComponent } from "../user-footer/user-footer.component";
 export class SideMenuComponent implements OnInit {
   menuSelecionado = 'Home';
   playlists: IPlaylist[] = [];
+  router = inject(Router);
   spotifyService = inject(SpotifyService)
 
-  buttonClick(button: string){
-    this.menuSelecionado = button;
+  buttonClick(botao: string){
+    this.menuSelecionado = botao;
+    this.router.navigateByUrl('player/home');
   }
   ngOnInit(): void {
     this.searchPlaylists()
   }
   async searchPlaylists(){
     this.playlists = await this.spotifyService.searchPlaylistUser();
+  }
+  logout(): void {
+    this.spotifyService.logout();
   }
 }
