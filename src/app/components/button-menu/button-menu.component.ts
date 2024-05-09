@@ -5,7 +5,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-   <button class="btn btn-success mx-2" 
+   <button class="btn btn-success btn-outline mx-1 btn-sm overflow-auto" 
    [class.selected]="selected" 
    (click)="onClick()"
    type="button">

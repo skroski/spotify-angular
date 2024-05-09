@@ -8,7 +8,7 @@ import { newArtista } from '../../common/factories';
   standalone: true,
   imports: [],
   template: `
-    <div class="card p-20">
+    <div class="card">
       <div class="artista flex">
         <h2 class="titulo-bg text-4xl my-6 font-bold text-green-600 mt-4">
           {{ topArtista.name }}
