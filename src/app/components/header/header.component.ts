@@ -1,12 +1,14 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { SpotifyService } from '../../services/spotify.service';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   template: `
+   <p data-testid="title">{{ title }}</p>
     <div class="navbar bg-base-100">
       <div class="navbar-start">
         <div class="dropdown">
@@ -40,7 +42,7 @@ import { Router } from '@angular/router';
           </ul>
         </div>
         <a class="btn btn-ghost text-xl">
-         Dashboard
+        {{ title }}
         </a>
       </div>
       <div class="navbar-center hidden lg:flex">
@@ -68,6 +70,7 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   private spotifyService = inject(SpotifyService);
   private router = inject(Router);
+  public title = 'Dashboard'
   ngOnInit(): void {
     this.verificarTokenUrlCallback();
   }

@@ -4,20 +4,34 @@ import { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
+  let nativeElement: HTMLElement;
   let fixture: ComponentFixture<HeaderComponent>;
+  
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(() => {
+    TestBed.configureTestingModule({
       imports: [HeaderComponent]
-    })
-    .compileComponents();
+    });
     
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    nativeElement = fixture.nativeElement;
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('teste de propriedade testedashboardid', () => { 
+    fixture.detectChanges();
+
+    expect(component.title)
+    .toEqual('Dashboard')
+
+    const nativeElementText = nativeElement.querySelector(
+      '[data-testid=title]'
+    )?.textContent;
+
+    expect(nativeElementText).toEqual('Dashboard');
+  });
+ 
 });
