@@ -33,6 +33,7 @@
     "@angular-devkit/build-angular": "^17.0.10",
     "@angular/cli": "^17.2.0",
     "@angular/compiler-cli": "^17.2.0",
+    "@babel/preset-typescript": "^7.24.1",
     "@types/jest": "^29.5.12",
     "autoprefixer": "^10.4.19",
     "daisyui": "^4.10.1",

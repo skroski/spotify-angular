@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TopArtistaComponent } from '../../components/top-artista/top-artista.component';
+import { DiretivaTestDirective } from '../../diretives/diretiva-test.directive';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,10 @@ import { TopArtistaComponent } from '../../components/top-artista/top-artista.co
   template: `
     <div class="minhas-musicas mx-4">
       <app-top-artista></app-top-artista>
-
+      <button appDiretivaTest> Normal </button>
+      <button appDiretivaTest fontColor="orange"> Color Pink </button>
+      <button appDiretivaTest bgColor="red"> Bg Red </button>
+      <button appDiretivaTest fontColor="green"> Color Purple</button>
       <span class="titulo-bg mt-4"> Musicas Curtidas </span>
 
       <table class="table mt-3">
@@ -33,6 +37,6 @@ import { TopArtistaComponent } from '../../components/top-artista/top-artista.co
     </div>
   `,
   styleUrl: './home.component.scss',
-  imports: [TopArtistaComponent],
+  imports: [TopArtistaComponent, DiretivaTestDirective],
 })
 export class HomeComponent {}
