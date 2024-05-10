@@ -8,13 +8,9 @@ import { DiretivaTestDirective } from '../../diretives/diretiva-test.directive';
   template: `
     <div class="">
       <app-top-artista></app-top-artista>
-      
-        <button appDiretivaTest>Normal</button>
-        <button appDiretivaTest fontColor="orange">Color Pink</button>
-        <button appDiretivaTest bgColor="red">Bg Red</button>
-        <button appDiretivaTest fontColor="green">Color Purple</button>
-        <span class="titulo-bg mt-4"> Musicas Curtidas </span>
-
+      <h2 class="titulo-bg text-4xl my-6 font-bold text-green-600 mt-4">
+          Músicas Curtidas
+        </h2>
         <table class="table mt-3">
           <thead>
             <tr>

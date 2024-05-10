@@ -11,13 +11,15 @@ import { newArtista } from '../../common/factories';
     <div class="card">
       <div class="artista flex">
         <h2 class="titulo-bg text-4xl my-6 font-bold text-green-600 mt-4">
-          {{ topArtista.name }}
+          Seu Top Artista
         </h2>
       </div>
       <div
-        class="w-auto h-32 bg-no-repeat bg-cover"
+        class="w-auto h-32 bg-no-repeat bg-cover bg-opacity-5"
         [style.background-image]="'url(' + topArtista.imagemUrl + ')'"
-      ></div>
+      >
+      <h3 class="titulo-bg text-2xl my-6 font-bold text-gray-800 p-6">{{ topArtista.name }}</h3>
+    </div>
     </div>
   `,
   styleUrl: './top-artista.component.scss',
