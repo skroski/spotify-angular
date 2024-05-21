@@ -16,8 +16,7 @@ export const routes: Routes = [
 
     {
         path: 'player',
-        loadChildren: () => import('./pages/player/player.routes')
-        .then(c => c.PlayerRoutes),
+        loadChildren: () => import('./pages/player/player.routes').then(c => c.PlayerRoutes),
         canMatch:[AuthenticatedGuard]
     },
     {

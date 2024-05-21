@@ -33,7 +33,7 @@ export function SpotifyArtistaParaArtista(
   };
 }
 
-export function SpotifyTrakParaMusica(
+export function SpotifyTrackParaMusica(
   spotifyTrack: SpotifyApi.TrackObjectFull
 ): IMusica {
   return {
